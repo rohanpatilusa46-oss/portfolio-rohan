@@ -30,9 +30,17 @@ export default function Navbar() {
           System Design
         </Link>
 
-        <Link href="/resume" className="hover:text-white transition">
+        {/* <Link href="/resume" className="hover:text-white transition">
           Resume
-        </Link>
+        </Link> */}
+        <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-white transition"
+        >
+        Resume
+        </a>
 
       </div>
     </div>

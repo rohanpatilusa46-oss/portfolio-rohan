@@ -84,7 +84,7 @@ export default function TechStack() {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-3 gap-12">
 
       {groups.map((group, i) => (
         <div

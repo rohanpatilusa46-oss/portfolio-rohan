@@ -6,7 +6,7 @@ import TechStack from "./TechStack";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center -mt-20">
       
       {/* Background glow */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full" />

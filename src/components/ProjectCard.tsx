@@ -1,61 +1,62 @@
 "use client";
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-
-type Props = {
-  title: string;
-  description: string;
-  tags: string[];
-  metrics: string;
-  link: string;
-};
+import { useState } from "react";
+import ProjectModal from "./ProjectModal";
 
 export default function ProjectCard({
   title,
   description,
   tags,
   metrics,
-  link,
-}: Props) {
+}: any) {
+  const [open, setOpen] = useState(false);
+
+  const project = {
+    title,
+    description,
+    tags,
+    metrics,
+    architecture:
+      "User → Query Router → Retriever (FAISS/Qdrant) → LLM → Response",
+    challenges:
+      "Handled latency optimization, hallucination reduction, and retrieval accuracy tuning using hybrid search.",
+  };
+
   return (
-    <Link href={link}>
-      <motion.div
-        whileHover={{ y: -5 }}
-        className="p-6 rounded-xl border border-gray-800 bg-white/5 backdrop-blur cursor-pointer hover:border-blue-500/50 transition"
-      >
-        {/* Title */}
-        <h3 className="text-xl font-semibold tracking-tight">
-          {title}
-        </h3>
+    <>
+      {/* CARD */}
+      <div className="p-6 border border-gray-800 rounded-xl bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        
+        <h3 className="text-xl font-semibold">{title}</h3>
 
-        {/* Description */}
-        <p className="text-gray-400 mt-2 text-sm">
-          {description}
-        </p>
+        <p className="text-gray-400 mt-2">{description}</p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 mt-4">
-          {tags.map((tag, i) => (
-            <span
-              key={i}
-              className="text-xs px-2 py-1 bg-gray-800 rounded-md"
-            >
-              {tag}
+          {tags.map((t: string) => (
+            <span key={t} className="bg-white/10 px-3 py-1 rounded text-sm">
+              {t}
             </span>
           ))}
         </div>
 
-        {/* Metrics */}
-        <p className="text-blue-400 mt-4 text-sm">
-          {metrics}
-        </p>
+        <p className="text-blue-400 mt-4">{metrics}</p>
 
-        {/* CTA */}
-        <p className="mt-4 text-sm text-gray-300">
+        {/* BUTTON */}
+        <button
+          onClick={() => setOpen(true)}
+          className="mt-4 text-sm text-white/70 hover:text-white transition"
+        >
           View Details →
-        </p>
-      </motion.div>
-    </Link>
+        </button>
+      </div>
+
+      {/* MODAL */}
+      {open && (
+        <ProjectModal
+          project={project}
+          onClose={() => setOpen(false)}
+        />
+      )}
+    </>
   );
 }
