@@ -1,29 +1,40 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="font-semibold text-lg tracking-tight">
-            <a className="hover:text-white transition duration-200"></a>
-          Rohan Patil
-        </h1>
-
-        <div className="flex gap-6 text-sm text-gray-300">
-          <a href="#projects" className="hover:text-white transition">
-            Projects
-          </a>
-          <a href="#experience" className="hover:text-white transition">
-            Experience
-          </a>
-          <a href="#contact" className="hover:text-white transition">
-            Contact
-          </a>
-          <a href="/system-design" className="hover:text-white transition">
-            System Design
-          </a>
-        </div>
+    <div className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-black/50 backdrop-blur-md border-b border-white/10">
+      
+      {/* LEFT: NAME */}
+      <div className="text-white font-semibold text-lg">
+        Rohan Patil
       </div>
-    </nav>
+
+      {/* RIGHT: MENU */}
+      <div className="flex gap-6 text-sm text-white/70">
+        
+        <Link href="/" className="hover:text-white transition">
+          Home
+        </Link>
+
+        <Link href="/#projects" className="hover:text-white transition">
+        Projects
+        </Link>
+
+        <Link href="/#experience" className="hover:text-white transition">
+        Experience
+        </Link>
+
+        <Link href="/system-design" className="hover:text-white transition">
+          System Design
+        </Link>
+
+        <Link href="/resume" className="hover:text-white transition">
+          Resume
+        </Link>
+
+      </div>
+    </div>
   );
-} 
+}

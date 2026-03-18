@@ -1,10 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "Rohan Patil — AI/ML Engineer",
+  title: "Rohan Patil Portfolio",
   description: "AI/ML Engineer Portfolio",
 };
 
@@ -14,9 +12,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-black text-white`}>
-        {children}
+    <html lang="en">
+      <body className="bg-black text-white">
+        <Navbar />
+        <main className="pt-20 px-6 max-w-7xl mx-auto">
+          {children}
+        </main>
       </body>
     </html>
   );
