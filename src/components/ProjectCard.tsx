@@ -26,21 +26,7 @@ export default function ProjectCard({
     <>
       {/* CARD */}
         <div
-        className="
-            relative group
-            p-6 rounded-2xl
-
-            bg-white/5
-            backdrop-blur-lg
-
-            border border-white/10
-
-            transition-all duration-300 ease-out
-
-            hover:-translate-y-1
-            hover:border-red/20
-            hover:bg-white/10
-        " 
+        className="relative group p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/50 hover:bg-white/10" 
         >
             
         
