@@ -275,6 +275,56 @@ export default function Home() {
   </div>
 </section>
 
+        <section id="contact" className="scroll-mt-24 mt-32 mb-20">
+  <div className="text-center max-w-2xl mx-auto">
+
+    {/* TITLE */}
+    <h2 className="text-3xl md:text-4xl font-semibold">
+      Let’s Build Something Great 🚀
+    </h2>
+
+    {/* SUBTEXT */}
+    <p className="text-gray-400 mt-4">
+      I’m open to AI/ML Engineering roles, collaborations, and interesting problems.
+      Feel free to reach out — I’d love to connect.
+    </p>
+
+    {/* BUTTONS */}
+    <div className="mt-8 flex flex-wrap justify-center gap-4">
+
+      {/* EMAIL */}
+      <a
+        href="mailto:rohanpatil.usa46@gmail.com"
+        className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+      >
+        Email Me
+      </a>
+
+      {/* LINKEDIN */}
+      <a
+        href="https://www.linkedin.com/in/rohanpatil46/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition"
+      >
+        LinkedIn
+      </a>
+
+      {/* GITHUB */}
+      <a
+        href="https://github.com/rohanpatilusa46-oss"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition"
+      >
+        GitHub
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
       {/* FOOTER */}
       <footer className="mt-32 mb-10 text-center text-gray-500 text-sm">
         © {new Date().getFullYear()} Rohan Patil — Built with Next.js 🚀
