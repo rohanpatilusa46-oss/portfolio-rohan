@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: 'https://lensapp-omega.vercel.app',
         permanent: false,
       },
+      {
+        source: '/projects/chatbot',
+        destination: 'https://adaptive-rag-chatbot2.vercel.app',
+        permanent: false,
+      },
     ]
   },
 };
