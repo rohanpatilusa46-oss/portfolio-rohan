@@ -14,20 +14,25 @@ body {
 }
 
 body {
-  color: white;
-  font-family: system-ui, -apple-system, sans-serif;
-
   background: radial-gradient(
       circle at 20% 20%,
       rgba(59, 130, 246, 0.15),
       transparent 40%
     ),
     radial-gradient(
-      circle at 80% 0%,
-      rgba(139, 92, 246, 0.15),
+      circle at 80% 30%,
+      rgba(139, 92, 246, 0.12),
       transparent 40%
     ),
-    #050505;
+    linear-gradient(
+      180deg,
+      #0b1220 0%,
+      #0a0f1c 40%,
+      #090d18 70%,
+      #0a0e1a 100%
+    );
+
+  color: white;
 }
 
 /* -------------------- */

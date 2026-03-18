@@ -25,9 +25,26 @@ export default function ProjectCard({
   return (
     <>
       {/* CARD */}
-      <div className="p-6 border border-gray-800 rounded-xl bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <div
+        className="
+            relative group
+            p-6 rounded-2xl
+
+            bg-white/5
+            backdrop-blur-lg
+
+            border border-white/10
+
+            transition-all duration-300 ease-out
+
+            hover:-translate-y-1
+            hover:border-red/20
+            hover:bg-white/10
+        " 
+        >
+            
         
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-xl font-bold">{title}</h3>
 
         <p className="text-gray-400 mt-2">{description}</p>
 
