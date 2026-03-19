@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import ProjectModal from "./ProjectModal";
+// import { useState } from "react";
+// import ProjectModal from "./ProjectModal";
+import Link from "next/link";
 
 export default function ProjectCard({
+  slug,
   title,
   description,
   tags,
@@ -11,9 +13,10 @@ export default function ProjectCard({
   github,
   demo,
 }: any) {
-  const [open, setOpen] = useState(false);
+
 
   const project = {
+    slug,
     title,
     description,
     tags,
@@ -51,12 +54,12 @@ export default function ProjectCard({
         <div className="mt-5 flex gap-3 flex-wrap">
 
           {/* View Details */}
-          <button
-            onClick={() => setOpen(true)}
+          <Link
+            href={`/projects#${slug}`}
             className="text-sm text-white/70 hover:text-white transition"
           >
             View Details →
-          </button>
+          </Link>
 
           {/* GitHub */}
           {github && (
@@ -85,12 +88,7 @@ export default function ProjectCard({
       </div>
 
       {/* MODAL */}
-      {open && (
-        <ProjectModal
-          project={project}
-          onClose={() => setOpen(false)}
-        />
-      )}
+      
     </>
   );
 }

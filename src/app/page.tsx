@@ -2,6 +2,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import { projects } from "@/lib/projects";
 export default function Home() {
   return (
     <main className="max-w-7xl mx-auto px-6 md:px-1 pt-10">
@@ -17,55 +18,20 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6">
 
-          <ProjectCard
-            title="Adaptive RAG Chatbot"
-            description="Adaptive query routing, hybrid retrieval (vector + context-aware search), and LLM orchestration to minimize hallucinations and optimize response accuracy and latency."
-            tags={["LangGraph", "FastAPI", "Qdrant", "OpenAI"]}
-            github="https://github.com/rohanpatilusa46-oss/adaptive-rag-chatbot"
-            demo="/projects/chatbot"
-            
-          />
+          
 
+        {projects.map((p) => (
           <ProjectCard
-            title="LENS — AI Image Intelligence"
-            description="Multi-mode AI vision system that analyzes images and generates contextual outputs including storytelling, humor, and semantic interpretation using multimodal LLMs."
-            tags={["GPT-4o Vision", "Multimodal AI", "Computer Vision", "Next.js"]}
-            github="https://github.com/rohanpatilusa46-oss/Lens-app"   // update this
-            demo="/projects/lensapp"
+            key={p.slug}
+            slug={p.slug}
+            title={p.title}
+            description={p.description}
+            tags={p.tech}
+            metrics={p.metrics}
+            github={p.github}
+            demo={p.demo}
           />
- 
-          <ProjectCard
-            title="Second Brain — Knowledge Graph"
-            description="Paste any notes, ideas, or research and watch your thoughts come alive as an interactive force-directed knowledge graph powered by GPT-4o."
-            tags={["GPT-4o", "D3.js", "Next.js", "Knowledge Graph"]}
-            github="https://github.com/rohanpatilusa46-oss/second_brain"
-            demo="/projects/secondbrain"
-          />
-
-          {/* 🔥 Added 3 more projects */}
-          <ProjectCard
-            title="LLM Evaluation Dashboard"
-            description="Tracking model performance, latency, and hallucination metrics."
-            tags={["Python", "LLMs", "Evaluation"]}
-            metrics="Improved evaluation accuracy"
-            link="/projects/llm-eval"
-          />
-
-          <ProjectCard
-            title="Vector Search Engine"
-            description="Hybrid FAISS + Redis retrieval system for semantic search."
-            tags={["FAISS", "Redis", "Embeddings"]}
-            metrics="Recall ↑ 20%"
-            link="/projects/vector-search"
-          />
-
-          <ProjectCard
-            title="Inference Optimization System"
-            description="Optimized GPU inference using batching and Triton."
-            tags={["Triton", "GPU", "Kubernetes"]}
-            metrics="Throughput ↑ 25%"
-            link="/projects/inference"
-          />
+        ))}
 
         </div>
       </section>
