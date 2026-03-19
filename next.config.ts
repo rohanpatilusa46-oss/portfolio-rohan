@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/projects/secondbrain',
-        destination: 'https://secondbrain-no67vr0k2-rohanpatilusa46-oss-projects.vercel.app/',
+        destination: 'https://secondbrain-chi-ten.vercel.app',
         permanent: false,
       },
     ]
