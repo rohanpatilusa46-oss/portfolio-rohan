@@ -35,11 +35,11 @@ export default function Home() {
           />
  
           <ProjectCard
-            title="Real-Time ML Pipeline"
-            description="Kafka + Spark streaming pipeline for low-latency feature engineering."
-            tags={["Kafka", "Spark", "AWS"]}
-            metrics="1M+ events/day processed"
-            link="/projects/ml-pipeline"
+            title="Second Brain — Knowledge Graph"
+            description="Paste any notes, ideas, or research and watch your thoughts come alive as an interactive force-directed knowledge graph powered by GPT-4o."
+            tags={["GPT-4o", "D3.js", "Next.js", "Knowledge Graph"]}
+            github="https://github.com/rohanpatilusa46-oss/second_brain"
+            demo="/projects/secondbrain"
           />
 
           {/* 🔥 Added 3 more projects */}

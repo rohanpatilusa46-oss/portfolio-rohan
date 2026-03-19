@@ -45,8 +45,7 @@ export default function Hero() {
               className="mt-4 text-4xl md:text-5xl font-semibold leading-tight"
             >
               Building{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 
-                text-transparent bg-clip-text animate-gradient">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 text-transparent bg-clip-text animate-gradient">
                 AI Systems
                 </span> <br />
               That Scale 🚀
