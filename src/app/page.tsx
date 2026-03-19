@@ -136,7 +136,30 @@ export default function Home() {
     </div>
   </div>
 </section>
+{/* EDUCATION */}
+<section id="education" className="scroll-mt-24 mt-32">
+  <h2 className="text-3xl md:text-4xl font-semibold mb-16">
+    Education
+  </h2>
 
+  <div className="space-y-12">
+
+    {/* BINGHAMTON */}
+    <div className="p-6 border border-gray-800 rounded-xl bg-white/5 backdrop-blur hover:bg-white/10 transition">
+      <h3 className="text-xl font-semibold">
+        MS in Computer Science — Binghamton University
+      </h3>
+      <p className="text-sm text-gray-500">
+        2023 – 2025 · New York, USA
+      </p>
+
+      <ul className="mt-4 text-gray-300 space-y-2 text-sm">
+        <li> GPA: 3.85 </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
       <section id="tools" className="scroll-mt-24 mt-32">
   <h2 className="text-3xl md:text-4xl font-semibold mb-12">
     Tools & Technologies

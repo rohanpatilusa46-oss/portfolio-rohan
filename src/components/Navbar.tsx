@@ -75,16 +75,12 @@ export default function Navbar() {
           System Design
         </button>
         */}
-
-        {/* RESUME */}
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => handleScroll("education")}
           className="hover:text-white transition"
         >
-          Resume
-        </a>
+          Education
+        </button>
 
         {/* CONTACT */}
         <button
@@ -93,6 +89,16 @@ export default function Navbar() {
         >
           Contact
         </button>
+
+          {/* RESUME */}
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition"
+        >
+          Resume
+        </a>
 
       </div>
     </div>
