@@ -1,18 +1,44 @@
 export const projects = [
-  {
-    slug: "adaptive-rag",
-    title: "Adaptive RAG Chatbot",
+   {
+  slug: "adaptive-rag",
+  title: "Adaptive RAG Chatbot",
+
+    tagline:
+      "An intelligent retrieval system that dynamically adapts query processing to reduce hallucination and improve response quality in LLMs.",
+    tech: ["GPT-4o Vision", "Multimodal AI", "Computer Vision", "Next.js"],
     description:
-      "Adaptive query routing, hybrid retrieval (vector + context-aware search), and LLM orchestration to minimize hallucinations and optimize response accuracy and latency.",
-    tech: ["LangGraph", "FastAPI", "Qdrant", "OpenAI"],
-    metrics: "↓ Latency 40% | ↑ Accuracy 25%",
-    github: "https://github.com/rohanpatilusa46-oss/adaptive-rag-chatbot",
-    demo: "/projects/chatbot",
+      "Built an adaptive Retrieval-Augmented Generation (RAG) system that improves LLM reliability by dynamically selecting retrieval strategies based on query complexity. The system balances latency and accuracy by routing simple queries through lightweight retrieval while applying deeper contextual search and re-ranking for complex queries.",
+
+    problem:
+      "Large Language Models often generate confident but incorrect responses when relevant context is missing. Traditional RAG systems rely on static retrieval pipelines, which treat all queries equally — leading to unnecessary latency for simple queries and insufficient context for complex ones.",
+
+    solution: [
+      "Designed a query routing mechanism to classify incoming queries and dynamically select the appropriate retrieval strategy",
+      "Implemented hybrid retrieval combining vector search (Qdrant) with contextual filtering for improved relevance",
+      "Added a re-ranking layer to prioritize high-signal documents and remove noisy results",
+      "Optimized prompt construction to enforce grounded responses and reduce hallucination",
+    ],
+
     architecture:
-      "User → Query Router → Retriever (FAISS/Qdrant) → LLM → Response",
+      "User Query → Query Classifier → Adaptive Router → Hybrid Retriever (Vector + Filtered Search) → Re-ranking → LLM → Response",
+
     challenges:
-      "Handled latency optimization, hallucination reduction, and retrieval accuracy tuning using hybrid search.",
-  },
+      "A key challenge was balancing latency and accuracy — deeper retrieval improves answer quality but increases response time. This was addressed through adaptive routing, ensuring complex pipelines are only triggered when necessary. Additionally, reducing hallucination required careful prompt design and strict context injection to ensure the model stays grounded in retrieved data.",
+
+    metrics:
+      "Reduced latency by ~40% while improving response accuracy by ~25%, with noticeable reduction in hallucinated outputs during evaluation.",
+
+    improvements: [
+      "Introduce learning-to-rank models for more advanced re-ranking",
+      "Add user feedback loop for continuous system improvement",
+      "Optimize ANN indexing (HNSW tuning) for faster retrieval at scale",
+    ],
+  github: "https://github.com/rohanpatilusa46-oss/adaptive-rag-chatbot",
+
+    image: "/projects/rag-v3.png",
+
+  // 🔥 ADD THIS
+  demo: "https://therohanpatil.com/projects/chatbot",},
   {
     slug: "lens-ai",
     title: "LENS — AI Image Intelligence",
