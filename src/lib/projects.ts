@@ -125,129 +125,117 @@ export const projects = [
     image: "/projects/second-brain.png",
   },
 
-  {
-    slug: "llm-eval",
-    title: "LLM Evaluation Dashboard",
-
-    tagline:
-      "A system for evaluating LLM performance across accuracy, latency, and hallucination metrics.",
-
-    tech: ["Python", "LLMs", "Evaluation Metrics", "Dashboards"],
+{
+    slug: "har-system",
+    title: "Human Activity Recognition System",
+    tagline: "Sequence modeling using 2D pose + LSTM",
 
     description:
-      "Designed a comprehensive evaluation framework to monitor LLM performance across multiple dimensions including latency, factual accuracy, and hallucination rates. The system enables data-driven improvements through structured benchmarking and visualization.",
+      "LSTM-based sequence model leveraging 2D pose keypoints for lightweight and accurate activity classification.",
+
+    tech: ["TensorFlow", "LSTM", "OpenPose", "Flask"],
+
+    metrics: ">90% Accuracy | Real-time inference",
+
+    github:
+      "https://github.com/rohanpatilusa46-oss/Human-Activity-Detection",
 
     problem:
-      "Evaluating LLM outputs is challenging due to lack of standardized metrics and difficulty in measuring hallucination and response quality.",
+      "Traditional activity recognition using RGB or 3D pose is computationally expensive and data-heavy.",
 
     solution: [
-      "Defined evaluation metrics such as latency, factual consistency, and response relevance",
-      "Built pipelines to log and analyze LLM outputs across different prompts",
-      "Designed dashboards to visualize performance trends and anomalies",
-      "Enabled comparative evaluation across models and configurations",
+      "Extracted 2D pose keypoints from video frames",
+      "Applied sequence modeling using stacked LSTM",
+      "Optimized feature representation for lightweight inference",
     ],
 
-    architecture:
-      "LLM Outputs → Metric Computation → Aggregation → Dashboard Visualization",
-
-    challenges:
-      "Quantifying hallucination and response quality required heuristic and model-based evaluation techniques. Ensuring consistent benchmarking across different runs was also complex.",
-
-    metrics:
-      "Improved evaluation reliability and enabled faster iteration cycles for model improvements.",
-
-    improvements: [
-      "Integrate automated evaluation using LLM-as-a-judge",
-      "Add experiment tracking (MLflow/W&B)",
-      "Introduce real-time monitoring pipelines",
+    architecture: [
+      "Video → OpenPose keypoints",
+      "Sequence windowing (32 frames)",
+      "2-layer LSTM",
+      "Softmax classification",
     ],
 
-    github: "#",
-    demo: "/projects/llm-eval",
-    image: "/projects/llm-eval.png",
+    results: [
+      ">90% classification accuracy",
+      "7-minute training time",
+      "Lightweight model suitable for edge devices",
+    ],
   },
 
   {
-    slug: "vector-search",
-    title: "Vector Search Engine",
-
-    tagline:
-      "A high-performance semantic search system using hybrid vector and cache-based retrieval.",
-
-    tech: ["FAISS", "Redis", "Embeddings", "ANN"],
+    slug: "drowsiness-detection",
+    title: "Driver Drowsiness Detection System",
+    tagline: "Real-time CV pipeline for fatigue detection",
 
     description:
-      "Built a scalable semantic search engine leveraging dense embeddings and approximate nearest neighbor (ANN) search. The system combines FAISS indexing with Redis caching to optimize retrieval speed and relevance.",
+      "Computer vision system combining Haar cascades and CNN-based eye-state classification to detect driver fatigue in real time.",
+
+    tech: ["OpenCV", "CNN", "Keras", "Realtime Vision"],
+
+    metrics: "Real-time detection | Alert system",
+
+    github:
+      "https://github.com/rohanpatilusa46-oss/Drowsiness-Detection",
 
     problem:
-      "Traditional keyword-based search fails to capture semantic meaning, while pure vector search can be slow at scale without optimization.",
+      "Drowsy driving leads to accidents, but detecting fatigue in real time using lightweight systems is challenging.",
 
     solution: [
-      "Implemented FAISS-based ANN search for efficient vector retrieval",
-      "Integrated Redis caching to reduce repeated query latency",
-      "Optimized embedding generation and similarity scoring",
-      "Balanced recall and precision using hybrid retrieval techniques",
+      "Detected face and eyes using Haar cascades",
+      "Classified eye state using CNN model",
+      "Used score-based thresholding to trigger alerts",
     ],
 
-    architecture:
-      "Query → Embedding Generation → ANN Search (FAISS) → Cache Layer (Redis) → Ranked Results",
-
-    challenges:
-      "Balancing recall vs precision while maintaining low latency was challenging. Index tuning and cache optimization were key to achieving performance goals.",
-
-    metrics:
-      "Improved recall by ~20% while maintaining low-latency retrieval.",
-
-    improvements: [
-      "Add hybrid keyword + vector search",
-      "Optimize HNSW parameters for large-scale datasets",
-      "Introduce re-ranking using cross-encoders",
+    architecture: [
+      "Webcam stream → Face detection (Haar)",
+      "Eye region extraction",
+      "CNN classification (Open/Closed)",
+      "Score threshold → Alarm trigger",
     ],
 
-    github: "#",
-    demo: "/projects/vector-search",
-    image: "/projects/vector-search.png",
+    results: [
+      "Real-time performance on webcam",
+      "Lightweight CNN for fast inference",
+      "Reliable alert mechanism for fatigue detection",
+    ],
   },
 
   {
-    slug: "inference-opt",
-    title: "Inference Optimization System",
-
-    tagline:
-      "Optimizes large-scale model inference using batching and GPU orchestration.",
-
-    tech: ["Triton", "Kubernetes", "GPU", "Batching"],
+    slug: "location-intelligence",
+    title: "Location Intelligence & Clustering System",
+    tagline: "Geospatial clustering for smart recommendations",
 
     description:
-      "Designed a high-performance inference system to optimize throughput and latency for large-scale ML models. The system leverages batching strategies, Triton inference server, and Kubernetes-based scaling to efficiently utilize GPU resources.",
+      "Unsupervised learning system using clustering techniques to analyze and recommend optimal neighborhoods based on venue data.",
+
+    tech: ["KMeans", "Clustering", "Pandas", "Geospatial Data"],
+
+    metrics: "Data-driven recommendations",
+
+    github:
+      "https://github.com/rohanpatilusa46-oss/BattleOfNeighbourhood",
 
     problem:
-      "Naive inference pipelines underutilize GPU resources and struggle with high concurrency, leading to poor throughput and increased latency.",
+      "Choosing optimal locations based on multiple features like venues and accessibility is complex and subjective.",
 
     solution: [
-      "Implemented request batching to maximize GPU utilization",
-      "Deployed Triton inference server for optimized model serving",
-      "Used Kubernetes for auto-scaling based on workload",
-      "Designed scheduling strategies for efficient request handling",
+      "Collected geospatial and venue data",
+      "Engineered features for clustering",
+      "Applied KMeans to group similar neighborhoods",
     ],
 
-    architecture:
-      "Requests → Batching Layer → Triton Inference Server → GPU Execution → Optimized Output",
-
-    challenges:
-      "Balancing latency vs throughput was critical — aggressive batching improves efficiency but can delay responses. Efficient scheduling and scaling strategies were required.",
-
-    metrics:
-      "Improved throughput by ~25% under high concurrency workloads.",
-
-    improvements: [
-      "Add dynamic batching strategies",
-      "Introduce model quantization for faster inference",
-      "Enable multi-region deployment for lower latency",
+    architecture: [
+      "Data collection (venues, locations)",
+      "Feature engineering",
+      "KMeans clustering",
+      "Cluster analysis → Recommendations",
     ],
 
-    github: "#",
-    demo: "/projects/inference",
-    image: "/projects/inference.png",
+    results: [
+      "Clear segmentation of neighborhoods",
+      "Improved decision-making using data",
+      "Scalable to different cities and datasets",
+    ],
   },
 ];
