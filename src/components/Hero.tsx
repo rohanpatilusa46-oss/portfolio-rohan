@@ -30,13 +30,13 @@ export default function Hero() {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text"
-            >
-              Rohan Patil
-            </motion.h1>
+                initial={false}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 text-transparent bg-clip-text animate-gradient"
+                >
+                Rohan Patil
+                </motion.h1>
 
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -45,7 +45,10 @@ export default function Hero() {
               className="mt-4 text-4xl md:text-5xl font-semibold leading-tight"
             >
               Building{" "}
-              <span className="text-blue-400">AI Systems</span> <br />
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 
+                text-transparent bg-clip-text animate-gradient">
+                AI Systems
+                </span> <br />
               That Scale 🚀
             </motion.h2>
 

@@ -1,5 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Background from "@/components/Background";
+
 
 export const metadata = {
   title: "Rohan Patil Portfolio",
@@ -13,11 +15,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
+      <body className="bg-black text-white overflow-x-hidden">
+
+        {/* 🌌 Global Background */}
+        <Background />
+
+
+        {/* 🔝 Navbar */}
         <Navbar />
-        <main className="pt-20 px-6 max-w-7xl mx-auto">
+
+        {/* 📄 Main Content */}
+        <main className="relative pt-24 px-6 md:px-12 max-w-7xl mx-auto">
           {children}
         </main>
+
       </body>
     </html>
   );

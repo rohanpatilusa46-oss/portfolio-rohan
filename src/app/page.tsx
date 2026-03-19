@@ -1,9 +1,10 @@
-import Hero from "@/components/Hero";
-import ProjectCard from "@/components/ProjectCard";
 
+import ProjectCard from "@/components/ProjectCard";
+import Link from "next/link";
+import Hero from "@/components/Hero";
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-6 md:px-12 pt-10">
+    <main className="max-w-7xl mx-auto px-6 md:px-1 pt-10">
 
       {/* HERO */}
       <Hero />
@@ -18,20 +19,21 @@ export default function Home() {
 
           <ProjectCard
             title="Adaptive RAG Chatbot"
-            description="Dynamic retrieval + query routing system for grounded LLM responses."
+            description="Adaptive query routing, hybrid retrieval (vector + context-aware search), and LLM orchestration to minimize hallucinations and optimize response accuracy and latency."
             tags={["LangGraph", "FastAPI", "Qdrant", "OpenAI"]}
-            metrics="↓ Latency 40% | ↑ Accuracy 25%"
-            link="/projects/adaptive-rag"
+            github="https://github.com/rohanpatilusa46-oss/adaptive-rag-chatbot"
+            demo="/projects/chatbot"
+            
           />
 
           <ProjectCard
-            title="Resume → Job Matching Agent"
-            description="Agentic AI system for matching resumes to job descriptions using embeddings."
-            tags={["LangGraph", "Embeddings", "Vector DB"]}
-            metrics="↑ Match Precision 30%"
-            link="/projects/resume-agent"
+            title="LENS — AI Image Intelligence"
+            description="Multi-mode AI vision system that analyzes images and generates contextual outputs including storytelling, humor, and semantic interpretation using multimodal LLMs."
+            tags={["GPT-4o Vision", "Multimodal AI", "Computer Vision", "Next.js"]}
+            github="https://github.com/rohanpatilusa46-oss/Lens-app"   // update this
+            demo="/projects/lensapp"
           />
-
+ 
           <ProjectCard
             title="Real-Time ML Pipeline"
             description="Kafka + Spark streaming pipeline for low-latency feature engineering."
