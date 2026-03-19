@@ -66,13 +66,15 @@ export default function Navbar() {
           Experience
         </button>
 
-        {/* 🔥 SYSTEM DESIGN (NEW) */}
+        {/* 🔥 SYSTEM DESIGN (TEMP HIDDEN) */}
+        {/*
         <button
           onClick={() => router.push("/system-design")}
           className="hover:text-white transition"
         >
           System Design
         </button>
+        */}
 
         {/* RESUME */}
         <a
