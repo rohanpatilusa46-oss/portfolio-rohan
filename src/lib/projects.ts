@@ -126,116 +126,131 @@ export const projects = [
   },
 
 {
-    slug: "har-system",
-    title: "Human Activity Recognition System",
-    tagline: "Sequence modeling using 2D pose + LSTM",
+  slug: "har-system",
+  title: "Human Activity Recognition System",
 
-    description:
-      "LSTM-based sequence model leveraging 2D pose keypoints for lightweight and accurate activity classification.",
+  tagline:
+    "Sequence modeling system using 2D pose estimation and LSTM networks for efficient activity classification.",
 
-    tech: ["TensorFlow", "LSTM", "OpenPose", "Flask"],
+  tech: ["TensorFlow", "LSTM", "OpenPose", "Flask"],
 
-    metrics: ">90% Accuracy | Real-time inference",
+  description:
+    "Built a lightweight human activity recognition system using 2D pose keypoints instead of raw video, enabling efficient sequence modeling with high accuracy. The system leverages temporal patterns using LSTM networks while significantly reducing computational overhead compared to RGB-based approaches.",
 
-    github:
-      "https://github.com/rohanpatilusa46-oss/Human-Activity-Detection",
+  problem:
+    "Traditional activity recognition systems rely on raw RGB video or 3D pose data, which are computationally expensive and require large datasets. This makes them unsuitable for real-time or resource-constrained environments.",
 
-    problem:
-      "Traditional activity recognition using RGB or 3D pose is computationally expensive and data-heavy.",
+  solution: [
+    "Extracted 2D pose keypoints using OpenPose to reduce input dimensionality",
+    "Constructed temporal sequences using sliding window approach (32 frames)",
+    "Applied stacked LSTM networks for sequence classification",
+    "Optimized model architecture to balance accuracy and computational efficiency",
+  ],
 
-    solution: [
-      "Extracted 2D pose keypoints from video frames",
-      "Applied sequence modeling using stacked LSTM",
-      "Optimized feature representation for lightweight inference",
-    ],
+  architecture:
+    "Video Input → OpenPose Keypoint Extraction → Sequence Windowing → LSTM (2-layer) → Softmax Classification → Activity Output",
 
-    architecture: [
-      "Video → OpenPose keypoints",
-      "Sequence windowing (32 frames)",
-      "2-layer LSTM",
-      "Softmax classification",
-    ],
+  challenges:
+    "Maintaining high accuracy with reduced feature representation was challenging due to loss of spatial information in 2D pose. Additionally, handling temporal dependencies required careful sequence design and tuning of LSTM parameters to avoid overfitting.",
 
-    results: [
-      ">90% classification accuracy",
-      "7-minute training time",
-      "Lightweight model suitable for edge devices",
-    ],
-  },
+  metrics:
+    "Achieved >90% classification accuracy with ~7 minutes training time, demonstrating strong performance with lightweight input representation.",
+
+  improvements: [
+    "Upgrade to Transformer-based sequence models for better temporal learning",
+    "Enable real-time streaming inference using optimized pipelines",
+    "Extend to multi-person and multi-activity detection scenarios",
+  ],
+
+  github:
+    "https://github.com/rohanpatilusa46-oss/Human-Activity-Detection",
+  demo: "",
+  image: "/projects/har.png",
+},
+
+{
+  slug: "drowsiness-detection",
+  title: "Driver Drowsiness Detection System",
+
+  tagline:
+    "Real-time computer vision system for detecting driver fatigue using CNN and eye-state analysis.",
+
+  tech: ["OpenCV", "CNN", "Keras", "Pygame"],
+
+  description:
+    "Developed a real-time driver drowsiness detection system that monitors eye states using computer vision and deep learning. The system processes webcam input, detects facial regions, and classifies eye states to trigger alerts when fatigue is detected.",
+
+  problem:
+    "Driver fatigue is a major cause of road accidents, but detecting drowsiness in real time using lightweight systems remains challenging, especially under varying lighting and head pose conditions.",
+
+  solution: [
+    "Used Haar cascade classifiers for real-time face and eye detection",
+    "Trained a CNN model to classify eye states (open vs closed)",
+    "Implemented score-based temporal logic to detect sustained eye closure",
+    "Integrated audio alert system to notify driver in real time",
+  ],
+
+  architecture:
+    "Webcam Stream → Face Detection → Eye Region Extraction → CNN Classification → Score Tracking → Alert Trigger",
+
+  challenges:
+    "Ensuring robustness under varying lighting conditions and head movements was difficult. Additionally, reducing false positives while maintaining sensitivity required careful tuning of threshold-based alert logic.",
+
+  metrics:
+    "Achieved real-time inference with reliable fatigue detection and low latency on standard hardware.",
+
+  improvements: [
+    "Incorporate facial landmark detection for higher accuracy",
+    "Add yawn detection and head pose estimation",
+    "Deploy on edge devices for in-car embedded systems",
+  ],
+
+  github:
+    "https://github.com/rohanpatilusa46-oss/Drowsiness-Detection",
+  demo: "",
+  image: "/projects/drowsiness.png",
+},
 
   {
-    slug: "drowsiness-detection",
-    title: "Driver Drowsiness Detection System",
-    tagline: "Real-time CV pipeline for fatigue detection",
+  slug: "location-intelligence",
+  title: "Location Intelligence & Clustering System",
 
-    description:
-      "Computer vision system combining Haar cascades and CNN-based eye-state classification to detect driver fatigue in real time.",
+  tagline:
+    "Data-driven geospatial analysis system using clustering for intelligent location recommendations.",
 
-    tech: ["OpenCV", "CNN", "Keras", "Realtime Vision"],
+  tech: ["KMeans", "Pandas", "Scikit-learn", "Geospatial Analysis"],
 
-    metrics: "Real-time detection | Alert system",
+  description:
+    "Built a location intelligence system that analyzes geospatial and venue data to identify optimal neighborhoods. The system applies clustering techniques to group similar areas and provide insights for decision-making based on data patterns.",
 
-    github:
-      "https://github.com/rohanpatilusa46-oss/Drowsiness-Detection",
+  problem:
+    "Selecting optimal locations based on multiple factors like venues, accessibility, and preferences is complex and subjective without structured data analysis.",
 
-    problem:
-      "Drowsy driving leads to accidents, but detecting fatigue in real time using lightweight systems is challenging.",
+  solution: [
+    "Collected and processed geospatial and venue data",
+    "Engineered features representing location characteristics",
+    "Applied KMeans clustering to group similar neighborhoods",
+    "Generated insights and recommendations based on cluster patterns",
+  ],
 
-    solution: [
-      "Detected face and eyes using Haar cascades",
-      "Classified eye state using CNN model",
-      "Used score-based thresholding to trigger alerts",
-    ],
+  architecture:
+    "Data Collection → Data Cleaning → Feature Engineering → KMeans Clustering → Cluster Analysis → Recommendations",
 
-    architecture: [
-      "Webcam stream → Face detection (Haar)",
-      "Eye region extraction",
-      "CNN classification (Open/Closed)",
-      "Score threshold → Alarm trigger",
-    ],
+  challenges:
+    "Handling sparse and noisy real-world location data required careful preprocessing. Choosing the optimal number of clusters and ensuring meaningful segmentation was also a key challenge.",
 
-    results: [
-      "Real-time performance on webcam",
-      "Lightweight CNN for fast inference",
-      "Reliable alert mechanism for fatigue detection",
-    ],
-  },
+  metrics:
+    "Successfully segmented neighborhoods into meaningful clusters enabling data-driven location recommendations.",
 
-  {
-    slug: "location-intelligence",
-    title: "Location Intelligence & Clustering System",
-    tagline: "Geospatial clustering for smart recommendations",
+  improvements: [
+    "Incorporate dynamic user preferences into recommendation engine",
+    "Use advanced clustering (DBSCAN, hierarchical)",
+    "Integrate real-time data sources for adaptive insights",
+  ],
 
-    description:
-      "Unsupervised learning system using clustering techniques to analyze and recommend optimal neighborhoods based on venue data.",
-
-    tech: ["KMeans", "Clustering", "Pandas", "Geospatial Data"],
-
-    metrics: "Data-driven recommendations",
-
-    github:
-      "https://github.com/rohanpatilusa46-oss/BattleOfNeighbourhood",
-
-    problem:
-      "Choosing optimal locations based on multiple features like venues and accessibility is complex and subjective.",
-
-    solution: [
-      "Collected geospatial and venue data",
-      "Engineered features for clustering",
-      "Applied KMeans to group similar neighborhoods",
-    ],
-
-    architecture: [
-      "Data collection (venues, locations)",
-      "Feature engineering",
-      "KMeans clustering",
-      "Cluster analysis → Recommendations",
-    ],
-
-    results: [
-      "Clear segmentation of neighborhoods",
-      "Improved decision-making using data",
-      "Scalable to different cities and datasets",
-    ],
-  },
+  github:
+    "https://github.com/rohanpatilusa46-oss/BattleOfNeighbourhood",
+  demo: "",
+  image: "/projects/location.png",
+},
 ];
