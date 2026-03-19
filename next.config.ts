@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: 'https://adaptive-rag-chatbot2.vercel.app',
         permanent: false,
       },
+      {
+        source: '/projects/secondbrain',
+        destination: 'https://secondbrain-no67vr0k2-rohanpatilusa46-oss-projects.vercel.app/',
+        permanent: false,
+      },
     ]
   },
 };
