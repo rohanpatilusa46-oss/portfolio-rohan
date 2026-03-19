@@ -1,5 +1,5 @@
 "use client";
-
+import Pipeline from "@/components/Pipeline";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import TechStack from "./TechStack";
@@ -93,21 +93,17 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="mt-12 flex gap-10 text-sm"
+              className="mt-1 flex gap-10 text-sm"
             >
-              <div>
-                <p className="text-xl font-semibold">5+ yrs</p>
-                <p className="text-gray-400">Experience</p>
-              </div>
+             
 
-              <div>
-                <p className="text-xl font-semibold">25%</p>
-                <p className="text-gray-400">Latency Improvement</p>
+              {/* Replace stats with pipeline */}
+              <div className="mt-1">
+                <div className="mt-2 w-full max-w-xl">
+                <div className="mt-1">
+                  <Pipeline />
+                </div>
               </div>
-
-              <div>
-                <p className="text-xl font-semibold">1M+</p>
-                <p className="text-gray-400">Requests handled</p>
               </div>
             </motion.div>
           </div>

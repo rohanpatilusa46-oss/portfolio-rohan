@@ -1,11 +1,22 @@
 import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
+import Pipeline from "@/components/Pipeline";
 
 export default function ProjectsPage() {
   return (
     <div className="section">
-      <h1 className="text-4xl font-bold mb-10">Projects</h1>
+      
+      <h1 className="text-4xl font-bold text-center mb-6">
+        Projects
+      </h1>
 
+      {/* 🔥 PIPELINE FIRST */}
+      <Pipeline />
+
+      {/* spacing */}
+      <div className="mt-16" />
+
+      {/* PROJECTS */}
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p) => (
           <ProjectCard
@@ -20,6 +31,7 @@ export default function ProjectsPage() {
           />
         ))}
       </div>
+
     </div>
   );
 }

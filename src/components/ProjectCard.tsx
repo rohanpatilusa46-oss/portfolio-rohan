@@ -28,7 +28,6 @@ export default function ProjectCard({
       </div>
 
       {/* METRICS */}
-      <p className="text-blue-400 mt-4">{metrics}</p>
 
       {/* ACTIONS */}
       <div className="mt-5 flex gap-3 flex-wrap">

@@ -63,8 +63,8 @@ console.log("IMAGE:", project.image);
             <Image
               src={project.image}
               alt={project.title}
-              width={500}
-              height={250}
+              width={600}
+              height={400}
               className="rounded-2xl border border-white/10 shadow-xl brightness-110 contrast-125"
             />
         )}
@@ -137,15 +137,7 @@ console.log("IMAGE:", project.image);
       )}
 
       {/* 📊 IMPACT */}
-      {project.metrics && (
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold">Impact</h2>
-
-          <p className="mt-4 text-green-400 text-lg">
-            {project.metrics}
-          </p>
-        </div>
-      )}
+      
 
       {/* 🚀 IMPROVEMENTS */}
       {project.improvements && (
