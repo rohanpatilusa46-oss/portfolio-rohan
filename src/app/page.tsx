@@ -63,7 +63,7 @@ export default function Home() {
           {/* HEADER */}
           <div className="flex items-center gap-4">
             <img
-              src="/logos/perplexity.png"
+              src="/logos/Perplexity.png"
               alt="Perplexity"
               className="w-10 h-10 object-contain bg-white rounded-md p-1 shadow"
             />
