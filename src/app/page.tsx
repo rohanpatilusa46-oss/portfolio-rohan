@@ -81,7 +81,7 @@ export default function Home() {
           {/* CONTENT */}
           <ul className="mt-4 text-gray-300 space-y-2 text-sm leading-relaxed">
             <li>• Architected RAG pipelines integrating vector search + web indexing.</li>
-            <li>• Built FAISS + Redis hybrid retrieval improving recall/precision tradeoff.</li>
+            <li>• Built FAISS + BM25 hybrid retrieval with re-ranking improving Precision.</li>
             <li>• Optimized Triton GPU inference → +25% throughput.</li>
             <li>• Designed LLM routing (on-device + cloud) for sub-second latency.</li>
             <li>• Improved factual consistency via ranking + citation pipelines.</li>
@@ -293,7 +293,7 @@ export default function Home() {
 
       {/* LINKEDIN */}
       <a
-        href="https://www.linkedin.com/in/rohanpatil46/"
+        href="https://www.linkedin.com/in/rohan-patil-ai-ml/"
         target="_blank"
         rel="noopener noreferrer"
         className="px-6 py-3 border border-white/20 rounded-lg hover:bg-white/10 transition"
