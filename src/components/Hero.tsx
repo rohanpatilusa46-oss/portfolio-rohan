@@ -110,7 +110,7 @@ export default function Hero() {
 
           <div className="hidden md:block">
             <TechStack />
-            </div>
+          </div>
 
         </div>
       </div>
