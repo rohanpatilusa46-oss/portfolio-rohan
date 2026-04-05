@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         destination: 'https://secondbrain-chi-ten.vercel.app',
         permanent: false,
       },
+      {
+        source: '/projects/interview',
+        destination: 'https://interviewqs-seven.vercel.app/',
+        permanent: false,
+      },
     ]
   },
 };
